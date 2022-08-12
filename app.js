@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -16,7 +16,9 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-zahar:Test123@cluster0.htnzu.mongodb.net/blogDB", {useNewUrlParser: true});
+const pass = process.env.MONGO_PASS;
+
+mongoose.connect("mongodb+srv://admin-zahar:"+pass+"@cluster0.htnzu.mongodb.net/blogDB", {useNewUrlParser: true});
 
 const postSchema = {
   title: String,
