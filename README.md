@@ -12,4 +12,4 @@
 
 <hr>  
 
-<img src="images/Blog.png" >
+<img src="Blog.png" >
